@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Appointment System</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Appointment System</h1>
+        <div id="auth-container">
+            <label>Email:</label>
+            <input type="email" id="email" placeholder="Enter your email">
+
+            <label>Password:</label>
+            <input type="password" id="password" placeholder="Enter your password">
+
+            <button id="signInBtn">Sign In</button>
+            <button id="signOutBtn">Sign Out</button>
+        </div>
+
+        <div id="main-container">
+            <!-- Dashboard content will be dynamically added here -->
+        </div>
+
+        <div id="appointment-container">
+            <!-- Appointments will be dynamically added here -->
+        </div>
+    </div>
+
+    <!-- Load Firebase scripts -->
+    <script type="module" src="https://www.gstatic.com/firebasejs/10.6.0/firebase-app.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/10.6.0/firebase-auth.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/10.6.0/firebase-firestore.js"></script>
+
+    <!-- Load your configuration script first -->
+    <script type="module" src="firebase-config.js"></script>
+
+    <!-- Load your app.js script after the configuration script -->
+    <script type="module" src="app.js"></script>
+
+</body>
+
+</html>

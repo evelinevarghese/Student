@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <style>
+        /* Your styling goes here */
+        /* ... (styles from your provided code) */
+        body {
+            color: antiquewhite;
+            background: #09001d;
+            overflow: hidden;
+        }
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            padding: 20px 10px;
+            background: transparent;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+        }
+        .container{
+            margin: 0 auto;
+             margin-top: 100px;
+            border:4px solid #4CAF50 ;
+            height: 400px;
+            text-align:center;
+            box-shadow: 0 4px 8px 0 #7347d177;
+            transition: 0.3s;
+            width: 500px;
+           border-radius: 17px;7347d177
+            font-size: 1em;
+            line-height: 1.4;
+            font-family: Arial, sans-serif; background-color:#8057d823 ;
+
+        }
+        button {
+            width: 190px;
+            height: 55px;
+            background: rgba(76, 175, 79, 0.753);
+            border:2px solid #fff;
+            outline: radius 6px;
+            box-shadow: 0 0 10px #4CAF50 ;
+            font-size: 18px;
+            color: #ffffff;
+            letter-spacing: 1px;
+            font-weight: 600;
+            cursor:pointer; transition: .5s;
+}
+
+
+button:hover {
+    background: #09001d;
+            box-shadow: none;
+}
+.container h1{
+    font-size: 32px;
+            text-align: center;
+            background: linear-gradient(45deg, transparent,#4CAF50,transparent);
+            border-radius: 6px;
+}
+        /* ... (other styles) */
+    </style>
+</head>
+ 
+<body>
+
+    <div class="container">
+        <h1>Welcome!</h1><br>
+        <h2>Are you a student or a teacher?</h2><br><br>
+        <button onclick="verifyUser('student')">Student</button>
+        <button onclick="verifyUser('teacher')">Teacher</button>
+    </div>
+
+    <script>
+        function verifyUser(userType) {
+            // For simplicity, you can use a prompt for verification
+            // In a real-world scenario, you'd likely use a more secure method
+            const enteredPIN = prompt(`Enter the PIN for ${userType}: for student 1234 and teacher 5678`  );
+
+            // Replace '1234' with the actual PIN for students and '5678' for teachers
+            const studentPIN = '1234';
+            const teacherPIN = '5678';
+
+            if (enteredPIN) {
+                if (userType === 'student' && enteredPIN === studentPIN) {
+                    redirectTo('student.html');
+                } else if (userType === 'teacher' && enteredPIN === teacherPIN) {
+                    redirectTo('teacher.html');
+                } else {
+                    alert('Invalid PIN. Please try again.');
+                }
+            }
+        }
+
+        function redirectTo(page) {
+            window.location.href = page;
+        }
+    </script>
+
+</body>
+</html>
