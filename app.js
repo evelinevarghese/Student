@@ -10,19 +10,33 @@ const db = getFirestore();
 
 // Authentication functions
 function signIn() {
- const email = document.getElementById('email').value;
- const password = document.getElementById('password').value;
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
 
-signInWithEmailAndPassword(auth, email, password)
- .then(() => {
- console.log('Signed in successfully!');
- // Call function to load appointments after signing in
- window.location.href = 'home.html';
- })
- .catch((error) => {
-    console.error('Error signing in:', error.message);
-    });
-   }
+    if (email && password) {
+        signInWithEmailAndPassword(auth, email, password)
+            .then(() => {
+                console.log('Signed in successfully!');
+                // Call function to load appointments after signing in
+                window.location.href = 'home.html';
+            })
+            .catch((error) => {
+                console.error('Error signing in:', error.message);
+            });
+    } else {
+        // If email and password are not provided, sign in anonymously
+        signInAnonymously(auth)
+            .then(() => {
+                console.log('Signed in anonymously!');
+                // Call function to load appointments after signing in
+                window.location.href = 'home.html';
+            })
+            .catch((error) => {
+                console.error('Error signing in anonymously:', error.message);
+            });
+    }
+}
+
    
    function handleSignOut() {
     signOut(auth)

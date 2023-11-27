@@ -8,7 +8,7 @@
         /* Your styling goes here */
         /* ... (styles from your provided code) */
         body {
-            color: antiquewhite;
+            color: rgb(0, 0, 0);
             background: #09001d;
             overflow: hidden;
         }
@@ -27,10 +27,10 @@
         .container{
             margin: 0 auto;
              margin-top: 100px;
-            border:4px solid #4CAF50 ;
+            border: 4px solid #05050554 ;
             height: 400px;
             text-align:center;
-            box-shadow: 0 4px 8px 0 #7347d177;
+            box-shadow: 0 4px 8px 0 #11111177;
             transition: 0.3s;
             width: 500px;
            border-radius: 17px;7347d177
@@ -40,19 +40,41 @@
 
         }
         button {
-            width: 190px;
+            width: 150px;
             height: 55px;
             background: rgba(76, 175, 79, 0.753);
-            border:2px solid #fff;
+            border:2px solidrgba(76, 175, 79, 0.753);
             outline: radius 6px;
-            box-shadow: 0 0 10px #4CAF50 ;
+            box-shadow: 0 0 10px rgba(76, 175, 79, 0.753) ;
             font-size: 18px;
             color: #ffffff;
             letter-spacing: 1px;
             font-weight: 600;
             cursor:pointer; transition: .5s;
-}
+            box-shadow: #09001d;
+            border-radius: 10px;
 
+}
+.animated-background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgb(106, 228, 177), rgb(136, 126, 219), rgb(49, 68, 156), rgb(2, 117, 41));
+    background-size: 400% 400%;
+    animation: gradientAnimation 10s ease infinite;
+  }
+
+  @keyframes gradientAnimation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
 
 button:hover {
     background: #09001d;
@@ -68,7 +90,7 @@ button:hover {
     </style>
 </head>
  
-<body>
+<body><div class="animated-background"> 
 
     <div class="container">
         <h1>Welcome!</h1><br>
@@ -102,6 +124,6 @@ button:hover {
             window.location.href = page;
         }
     </script>
-
+</div>
 </body>
 </html>
